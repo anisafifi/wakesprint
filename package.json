@@ -1,0 +1,44 @@
+{
+  "name": "nodejs-wol",
+  "version": "1.0.0",
+  "description": "Wake-on-LAN application with CLI and API support",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "wol": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "dev:cli": "tsx src/cli.ts",
+    "start": "node dist/index.js",
+    "cli": "node dist/cli.js",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "wake-on-lan",
+    "wol",
+    "network",
+    "cli",
+    "api"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "express": "^4.21.2",
+    "express-rate-limit": "^8.2.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "wake_on_lan": "^1.0.0",
+    "winston": "^3.19.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.5",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.8",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
