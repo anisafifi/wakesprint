@@ -160,6 +160,21 @@ Frontend:
 
 - `NEXT_PUBLIC_API_URL` (default: empty)
 
+## Remote Access (VPN / Zero Trust)
+
+WakeSprint is designed for LAN use, but you can operate it remotely by connecting your client to the same private network as the backend. Common approaches:
+
+- Site-to-site or client VPN into your home LAN
+- Overlay networks like Tailscale
+- Zero-trust access like Twingate
+
+Guidelines:
+
+- Run the backend on a machine that can broadcast WoL packets on the target LAN
+- Connect your client device to the same private network (VPN, Tailscale, or Twingate)
+- Set `NEXT_PUBLIC_API_URL` to the backend address reachable over that private network
+- Do not expose the backend directly to the public internet without additional security
+
 ## Logs
 
 Backend logs are written to:
