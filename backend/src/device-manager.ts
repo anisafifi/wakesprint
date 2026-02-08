@@ -42,8 +42,8 @@ export class DeviceManager {
 
   async getDevices(): Promise<Device[]> {
     const db = this.ensureDb();
-    const rows = await db.all<Device>('SELECT name, mac, ip, broadcast FROM devices ORDER BY name COLLATE NOCASE');
-    return rows.map(device => this.normalizeDevice(device));
+    const rows = await db.all<Device[]>('SELECT name, mac, ip, broadcast FROM devices ORDER BY name COLLATE NOCASE');
+    return rows.map((device: Device) => this.normalizeDevice(device));
   }
 
   async getDevice(name: string): Promise<Device | undefined> {
